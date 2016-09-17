@@ -1,0 +1,1688 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30 Aug, 2016, 2:25:09 PM
+    Author     : ahextech
+*/
+/* =============================================================================
+***************************     font Styles     ********************************
+============================================================================= */
+@font-face {
+    font-family: 'HelveticaNeue-Thin';
+    src: url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.eot'); 
+    src: url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.woff') format('woff'),
+        url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.ttf')  format('truetype'),
+        url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.svg#svgFontName') format('svg'); 
+}
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../fonts/HelveticaNeue/HelveticaNeue.eot'); 
+    src: url('../fonts/HelveticaNeue/HelveticaNeue.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/HelveticaNeue/HelveticaNeue.woff') format('woff'),
+        url('../fonts/HelveticaNeue/HelveticaNeue.ttf')  format('truetype'),
+        url('../fonts/HelveticaNeue/HelveticaNeue.svg#svgFontName') format('svg'); 
+}
+/* =============================================================================
+**************************     Common Styles     *******************************
+============================================================================= */
+body{
+    margin: 0;
+    font-family: "HelveticaNeue";
+    background-color: #ECF0F5;
+}
+.body-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+* {
+    outline: none !important;
+}
+* {
+    box-sizing: border-box;
+}
+* a,a:hover,a:focus{
+    text-decoration: none;
+}
+.marL15{
+    margin-left: 15px;
+}
+.marR15{
+    margin-right: 15px;
+}
+.padB20{
+    padding-bottom: 20px;
+}
+.blue{
+    color: #00C0EF;
+}
+.blue-light{
+    color: #3C8DBC
+}
+.blue-dark{
+    color: #0073B7
+}
+.green{
+    color: #00A65A
+}
+.red{
+    color: #DD4B39
+}
+.yellow{
+    color: #F39C12
+}
+.white{
+    color: #fff;
+}
+.black{
+    color: #000;
+}
+.blue-bg{
+    background-color: #00C0EF
+}
+.blue-light-bg{
+    background-color: #3C8DBC
+}
+.blue-dark-bg{
+    background-color: #0073B7
+}
+.green-bg{
+    background-color: #00A65A
+}
+.red-bg{
+    background-color: #DD4B39
+}
+.yellow-bg{
+    background-color: #F39C12
+}
+.white-bg{
+    background-color: #fff;
+}
+.black-bg{
+    background-color: #000;
+}
+.header-panel{
+    color: #333;
+    border-bottom: 1px solid #D2D6DE;
+    padding: 11px 9px;
+    background-color: #fff;
+    position: relative;
+}
+.body-panel{
+    background-color: #fff;
+    padding: 10px 10px
+}
+.footer-panel{
+    color: #333;
+    padding: 11px 9px;
+    border-top: 1px solid #D2D6DE;
+    background-color: #fff;
+}
+.content-right{
+    float: right;
+}
+.content-left{
+    float: left;
+}
+.label-text{
+    padding: 3px 6px;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 10px;
+    line-height: 0.9;
+    margin-right: 3px;
+    font-weight: bold;
+}
+.indicator-down{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+.indicator-up{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    content: "";
+    border-top: 0;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+.indicator-left{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    content: "";
+    border-left: 0;
+    border-right: 4px dashed;
+    border-right: 4px solid \9;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+.indicator-right{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    content: "";
+    border-right: 0;
+    border-left: 4px dashed;
+    border-left: 4px solid \9;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+/* =============================================================================
+**************************     Top Navigation     ******************************
+============================================================================= */
+.topnav-wrapper{
+    width: 100%;
+    height: 50px; 
+}
+.topnav-wrapper  .brand-wrapper{
+    float           : left;
+    width           : 20%;
+    height          : 50px;
+    text-align      : center;
+    line-height     : 1;
+    background-color: #367FA9;
+}
+.topnav-wrapper .brand-wrapper a{
+    color: #fff;
+    font-size: 21px; 
+    font-weight: bold; 
+    padding: 14px;
+    display: block;
+}
+.topnav-wrapper .brand-wrapper a:hover{
+    background-color: rgba(0,0,0,0.08);
+}
+.topnav-wrapper .nav-bar{
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+.topnav-wrapper .nav-bar > a {
+    padding: 16px;
+}
+.topnav-wrapper .nav-bar > a:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.topnav-wrapper .nav-bar > a > i{
+    padding-top: 17px;
+    color: #fff;
+}
+.topnav-wrapper .nav-bar .profile-wrapper{
+    float: right;
+}
+.topnav-wrapper .nav-bar .profile-wrapper > div{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.profile-wrapper  > div > a{
+    position: relative;
+    padding: 16px 15px 15px 15px;
+    color: #fff;
+    vertical-align: middle;
+    display: inline-block;
+}
+.profile-wrapper  > div > a:hover{
+    background-color: rgba(0,0,0,0.1)
+}
+.profile-wrapper > div > a > span{
+    position: absolute;
+    top: 10px;
+    right: 9px;
+    padding: 1px 2px;
+    color: #fff;
+    line-height: 1;
+    font-size: 9px;
+    border-radius: 2px;
+}
+.profile-wrapper  > div > div.inner,
+.profile-wrapper  > div > ul.inner{
+    width: 305px;
+    max-height: 290px;
+    background-color: #fff;
+    border: 1px solid #f4f4f4;
+    border-top:0;
+    border-bottom-left-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+    color: #666666;
+    list-style-type: none;
+    display: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 9;
+}
+.profile-wrapper  .message-wrapper  div.inner  a,
+.profile-wrapper  .notification-wrapper  div.inner  a,
+.profile-wrapper  .task-wrapper  div.inner  a{
+    display: block;
+    padding: 8px 10px;
+    color: #333333;
+    font-size: 13px;
+}
+.profile-wrapper  .message-wrapper  div.inner > a:first-child,
+.profile-wrapper  .notification-wrapper  div.inner > a:first-child,
+.profile-wrapper  .task-wrapper  div.inner > a:first-child{
+    border-bottom: 1px solid #f4f4f4;
+}
+.profile-wrapper  .message-wrapper  div.inner > a:last-child,
+.profile-wrapper  .notification-wrapper  div.inner > a:last-child,
+.profile-wrapper  .task-wrapper  div.inner > a:last-child{
+    text-align: center;
+    border-top: 1px solid #f4f4f4;
+}
+.profile-wrapper  .message-wrapper  div.inner > a:hover,
+.profile-wrapper  .notification-wrapper  div.inner > a:hover,
+.profile-wrapper  .task-wrapper  div.inner > a:hover{
+    background-color: rgba(0,0,0,0.08);
+}
+.profile-wrapper  .message-wrapper  div.inner > ul.message-list,
+.profile-wrapper  .notification-wrapper  div.inner > ul.notification-list,
+.profile-wrapper  .task-wrapper  div.inner > ul.task-list{
+    color: #666666;
+    list-style-type: none;
+    overflow-y: scroll;
+    max-height: 210px;
+    padding: 0;
+    margin: 0;
+}
+.profile-wrapper  .message-wrapper  div.inner > ul.message-list::-webkit-scrollbar,
+.profile-wrapper  .notification-wrapper  div.inner > ul.notification-list::-webkit-scrollbar,
+.profile-wrapper  .task-wrapper  div.inner > ul.task-list::-webkit-scrollbar{
+    width: 3px;
+}
+.profile-wrapper  .message-wrapper  div.inner > ul.message-list::-webkit-scrollbar-track,
+.profile-wrapper  .notification-wrapper  div.inner > ul.notification-list::-webkit-scrollbar-track,
+.profile-wrapper  .task-wrapper  div.inner > ul.task-list::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.profile-wrapper  .message-wrapper  div.inner > ul.message-list::-webkit-scrollbar-thumb,
+.profile-wrapper  .notification-wrapper  div.inner > ul.notification-list::-webkit-scrollbar-thumb,
+.profile-wrapper  .task-wrapper  div.inner > ul.task-list::-webkit-scrollbar-thumb{
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+.profile-wrapper  .message-wrapper  div.inner  ul.message-list  li,
+.profile-wrapper  .notification-wrapper  div.inner  ul.notification-list  li,
+.profile-wrapper  .task-wrapper  div.inner  ul.task-list  li{
+    border-bottom: 1px solid #f4f4f4;
+}    
+.profile-wrapper  .message-wrapper  div.inner  ul.message-list  li:last-child,
+.profile-wrapper  .notification-wrapper  div.inner  ul.notification-list  li:last-child,
+.profile-wrapper  .task-wrapper  div.inner  ul.task-list  li:last-child{
+    border-bottom: 0;
+}
+.profile-wrapper .message-wrapper  div.inner,
+.profile-wrapper .notification-wrapper  div.inner,
+.profile-wrapper .task-wrapper  div.inner,
+.profile-wrapper .admin-wrapper  ul.inner{
+    right: 0;
+    top: 50px;
+}
+.profile-wrapper .message-wrapper  div.inner  ul.message-list  li  a,
+.profile-wrapper .task-wrapper  div.inner  ul.task-list  li  a{
+    color  : #555;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+.profile-wrapper .message-wrapper  div.inner  ul.message-list  li  a:hover,
+.profile-wrapper .notification-wrapper  div.inner  ul.notification-list  li  a:hover,
+.profile-wrapper .task-wrapper  div.inner  ul.task-list  li  a:hover{
+    background-color: rgba(0,0,0,0.08);
+}
+.message-wrapper  div.inner  ul.message-list  li  a  img{
+    position: absolute;
+    top: 7px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.message-wrapper  div.inner  ul.message-list  li  a  div.message-content{
+    padding-left: 45px;
+    vertical-align: top;
+    width: 100%;
+}
+.message-wrapper  div.inner  ul.message-list  li  a  div.message-content .message-name{
+    font-size:14px;
+    color: #444;
+    padding: 2px 0 5px 0;
+}
+.message-wrapper  div.inner  ul.message-list  li  a  div.message-content .message-name span{
+    color: #666666;
+    float: right;
+    font-size: 9px;
+    vertical-align: top;
+    padding-left: 5px;
+}
+.message-wrapper  div.inner  ul.message-list  li  a  div.message-content p{
+    color: #666666;
+    margin: 0;
+    font-size: 11px;
+}
+.notification-wrapper  div.inner  ul.notification-list  li  a{
+    color  : #555;
+    display: block;
+    padding: 13px 10px;
+}
+.notification-wrapper  div.inner  ul.notification-list  li  a i{
+    /*padding: 10px;*/
+    width: 20px;
+}
+.notification-wrapper  div.inner  ul.notification-list  li  a span{
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+/* ===============  BarIndicator Custom CSS(TOP NAV) Starts  ================ */
+.task-wrapper  div.inner  ul.task-list  li  a span > span{
+    padding: 0;
+    font-size: 9px;
+}
+.task-wrapper  div.inner  ul.task-list  li  a span .bi-bar,
+.task-wrapper  div.inner  ul.task-list  li  a span .bi-bar .bi-barInner{
+    border-radius: 2px;
+    height: 8px !important;
+    box-shadow: none;
+}
+/* ==================  BarIndicator Custom CSS Ends  ======================== */
+
+.admin-wrapper a.toggle{
+    position: relative;
+    padding: 19px 15px 15px 50px !important;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+}
+.admin-wrapper a.toggle p{
+    margin: 0;
+}
+.admin-wrapper a.toggle > img{
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+.admin-wrapper ul.inner{
+    border-top: 1px solid #fff !important;
+}
+.admin-wrapper ul.inner li a{
+    display: block;
+    padding: 10px;
+    color:white;
+}
+.admin-wrapper ul.inner li a.admin-profile{
+    text-align: center;
+}
+.admin-wrapper ul.inner li a.admin-profile img{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    border: 3px solid #5EA1C8;
+    margin: 0 auto;
+    margin: 10px 0;
+}
+.admin-wrapper ul.inner li a.admin-profile .admin-details{
+    margin-bottom: 10px;
+}
+.admin-wrapper ul.inner li a.admin-profile .admin-details h4{
+    margin: 0;
+    font-weight: normal;
+}
+.admin-wrapper ul.inner li a.admin-profile .admin-details small{
+    font-size: 12px;
+}
+.admin-wrapper ul.inner li ul.admin-followers {
+    list-style-type: none;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+.admin-wrapper ul.inner li ul.admin-followers > li{
+    display: inline-block;
+    text-align: center;
+    width: 32.2%;
+}
+.admin-wrapper ul.inner li ul.admin-followers > li > a{
+    padding: 15px 21px;
+    color: #444444;
+    font-weight: normal;
+    font-size: 13px;
+}
+.admin-wrapper ul.inner li ul.admin-followers > li > a:hover{
+    background-color: rgba(0,0,0,0.08);
+}
+.admin-wrapper ul.inner li .admin-account{
+    padding: 10px;
+    background-color: #F9F9F9;
+}
+.admin-wrapper ul.inner li .admin-account button{
+    padding: 8px 12px;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.02);
+    color: #666666;
+    background-color: #F4F4F4;
+}
+.admin-wrapper ul.inner li .admin-account button:hover{
+    background-color: rgba(0,0,0,0.04)
+}
+.admin-wrapper ul.inner li .admin-account button.admin-profile-signout{
+    float: right;
+}
+.settings-wrapper a{
+
+}
+/* =============================================================================
+**************************     Aside Navigation     ****************************
+============================================================================= */
+/*  class before toggle  */
+.aside-wrapper{
+    width: 20%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    top: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #222D32;
+}
+/*  class after toggle  */
+.body-wrapper.sidebar-close .aside-wrapper{
+    left: -20%;
+}
+.aside-wrapper .side-nav-wrapper{
+
+}
+.aside-wrapper .side-nav-wrapper .side-admin-wrapper{
+    padding: 10px;
+}
+.aside-wrapper .side-nav-wrapper .side-admin-wrapper img{
+    width        : 45px;
+    height       : 45px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.aside-wrapper .side-nav-wrapper .side-admin-wrapper .side-admin-status{
+    display: inline-block;
+    color: #fff;
+    padding: 0 10px;
+    height: auto;
+}
+.aside-wrapper .side-nav-wrapper .side-admin-wrapper .side-admin-status h4{
+    display: block;
+    margin: 0;
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+.aside-wrapper .side-nav-wrapper .side-admin-wrapper .side-admin-status p{
+    display: block;
+    font-size:10px;
+    margin: 0;
+}
+.aside-wrapper .side-nav-wrapper .side-admin-wrapper .side-admin-status p i{
+    color: #3C763D;
+    margin-right: 2px;
+}
+.aside-wrapper .side-nav-wrapper .nav-search{
+    padding: 10px;
+    position: relative;
+}
+.aside-wrapper .side-nav-wrapper .nav-search input{
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #374850;
+    background-color: #374850;
+    color:#998574;
+    height: 35px;
+    width: 100%;
+}
+.aside-wrapper .side-nav-wrapper .nav-search i{
+    position: absolute;
+    color: #d7d7d7;
+    right: 20px;
+    top: 18px;
+}
+.aside-wrapper .side-nav-wrapper .side-main-wrapper p,
+.labels{
+    color: #445B5C;
+    padding: 10px 15px;
+    margin: 0;
+    background-color: #1A2226;
+    font-size: 12px;
+}
+.aside-wrapper .side-nav-wrapper .side-main-wrapper ul.accordian{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*padding-top: 10px;*/
+    background-color: #222D32;
+}
+.aside-wrapper .side-nav-wrapper .side-main-wrapper ul.accordian li a.toggle,
+.labels li a.toggle{
+    display: block;
+    padding: 15px 10px;
+    color: #B8C7CE;
+    width: 100%;
+    font-size:13px;
+    transition: background .3s ease;
+    border-left: 3px solid transparent;
+    /*display: block;*/
+    /*color: #fefefe;*/
+    /*padding: .75em;*/
+    /*border-radius: 0.15em;*/
+}
+.aside-wrapper .side-nav-wrapper .side-main-wrapper ul.accordian li a.toggle:hover,
+.aside-wrapper .side-nav-wrapper .side-main-wrapper ul.accordian li a.toggle.open,
+.labels li a.toggle:hover{
+    background-color: #1E282C;
+    border-left-color: #3C8DBC;
+    color: #fff;
+}
+.aside-wrapper .side-nav-wrapper .side-main-wrapper ul.accordian li a .left-icon{
+    padding: 10px 5px;
+}
+.aside-wrapper .side-nav-wrapper .side-main-wrapper ul.accordian li a .right-icon{
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.aside-wrapper .side-nav-wrapper .side-main-wrapper ul.accordian li a.open .right-icon{
+    transform: rotate(-90deg);
+}
+.accordian ul.inner{
+    list-style-type: none;
+    overflow: hidden;
+    display: none;
+    padding: 0px;
+    margin: 0;
+    background-color: #2C3B41;
+}
+.accordian ul.inner li{
+    /*padding: 10px;*/
+}
+.accordian ul.inner li a{
+    color: #8AA4AD;
+    vertical-align: middle;
+    font-size: 14px;
+    display: block;
+    padding: 8px 10px;
+}
+.accordian ul.inner li a i{
+    margin: 0px 10px;
+}
+.labels{
+    list-style-type: none;
+    padding: 0; 
+    background-color: #222D32;
+}
+.labels li a .left-icon {
+    padding: 10px 5px;
+}
+/* =============================================================================
+****************************     Main Content     ******************************
+============================================================================= */
+/*  class before Toggle  */
+.content-wrapper{
+    width: 80%;
+    margin-left: 20%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+/*  class after Toggle  */
+.body-wrapper.sidebar-close .content-wrapper{
+    width: 100%;
+    margin: 0;
+}
+.content-top-wrapper{
+    padding: 15px;
+}
+.content-wrapper .dashboard-wrapper{
+    width: 100%;
+}
+.content-wrapper .dashboard-wrapper div{
+    display: inline-block;
+}
+.dashboard-wrapper .dashboard{
+    color: #333;
+    font-size: 23px;
+}
+.dashboard-wrapper .dashboard .version{
+    color: #777;
+    font-size: 14px;
+    font-weight: 100;
+    padding-left: 5px;
+}
+.dashboard-wrapper .page-location-wrapper{
+    float: right;
+    font-size: 11px;
+    padding-top: 15px;
+}
+.page-location-wrapper span{
+    padding-right: 5px;
+    vertical-align: bottom;
+}
+.page-location-wrapper span:last-child{
+    padding-right: 0;
+}
+.page-location-wrapper .active-page{
+    color: #333;
+}
+.active-page > i {
+    padding-right: 5px;
+}
+.page-location-wrapper .angle-right{
+    color:#aaa;
+}
+.page-location-wrapper .inactive-page{
+    color: #666;
+}
+.content-wrapper .statistics-wrapper{
+    width: 100%;
+    margin-top: 15px;
+}
+.statistics-wrapper > div{
+    display: inline-block;
+    float: left;
+    height: 90px;
+    padding: 0 10px;
+    width: 25%;
+}
+.statistics-wrapper > div:first-child{
+    padding-left: 0;
+}
+.statistics-wrapper > div:last-child{
+    padding-right: 0;
+}
+.statistics-wrapper > div > div{
+    box-shadow: 1px 2px #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.statistics-wrapper > div > div > i{
+    border-radius: 3px 0 0 3px;
+    font-size: 45px;    
+    height: 100%;
+    text-align: center;
+    width: 90px;
+    line-height: 90px;
+    position: absolute;
+}
+.statistics-wrapper > div > div > div{
+    width: auto;
+    padding: 7px 0 0 100px;
+    height: 100%;
+}
+.statistics-wrapper > div > div > div > span{
+    padding-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.statistics-wrapper > div > div > div > span:first-child{
+    font-size: 13px;
+    display: block;
+}
+.statistics-wrapper > div > div > div > span:last-child{
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+}
+.content-wrapper .monthly-recap-wrapper{
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 3px;
+    border: 1px solid #D2D6DE;
+    border-top: 3px solid #d2d6de;
+    box-shadow: 1px 2px #ddd;
+    /*height: auto;*/
+}
+.monthly-recap-wrapper .header-panel > p,
+.monthly-recap-wrapper .header-panel > div{
+    display: inline-block
+}
+.monthly-recap-wrapper .header-panel > p{
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+}
+.monthly-recap-wrapper .header-panel > div{
+    position: absolute;
+    right: 10px;
+}
+.monthly-recap-wrapper .header-panel > div > a{
+    padding: 0 5px;    
+    color: #aaa;
+    font-size: 12px;
+}
+.monthly-recap-wrapper .header-panel > div > a :hover{
+    color: #444;
+}
+.monthly-recap-wrapper .body-panel > div{
+    display: inline-block;
+}
+.monthly-recap-wrapper .body-panel #container {
+    max-width: 65%;
+    min-width: 65%;
+    height: 250px;
+}
+.monthly-recap-wrapper .body-panel #container #highcharts-0{
+    height: 250px !important;
+}
+.monthly-recap-wrapper .body-panel #container #highcharts-0 svg{
+    height: 250px !important;
+}
+.monthly-recap-wrapper .body-panel .goal-wrapper{
+    width: 35%;
+    padding: 15px 0 15px 15px;
+
+}
+.monthly-recap-wrapper .body-panel .goal-wrapper h4{
+    text-align: center;
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+.monthly-recap-wrapper .body-panel .goal-wrapper ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.monthly-recap-wrapper .body-panel .goal-wrapper ul li{
+    display: block;
+    padding: 10px;
+}
+/* ============  BarIndicator Custom CSS(Main Content) Starts  ============== */
+.monthly-recap-wrapper .body-panel .goal-wrapper ul li span{
+    padding  : 2px;
+    font-size: 13px;
+    font-weight: normal;
+}
+.monthly-recap-wrapper .body-panel .goal-wrapper span .bi-bar,
+.monthly-recap-wrapper .body-panel .goal-wrapper span .bi-bar .bi-barInner{
+    border-radius: 2px;
+    box-shadow: none;
+}
+/* ==================  BarIndicator Custom CSS Ends  ======================== */
+.monthly-recap-wrapper .footer-panel div{
+    display: inline-block;
+    border-right: 1px solid #D2D6DE;
+    text-align: center;
+    width: 24.5%;
+    padding: 5px;
+}
+.monthly-recap-wrapper .footer-panel div:last-child{
+    border-right: 0;
+}
+.monthly-recap-wrapper .footer-panel div > p,
+.monthly-recap-wrapper .footer-panel div > h4{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3px;
+}
+.monthly-recap-wrapper .footer-panel div > p:first-child{
+    font-size: 13px;
+}
+.monthly-recap-wrapper .footer-panel div > p span{
+    margin-bottom: 2px;
+}
+.monthly-recap-wrapper .footer-panel div > h4{
+    font-size: 13px;
+    font-weight: normal;
+}
+.content-wrapper .content-row{
+    width: 100%;
+    margin-top: 15px;
+}
+.content-row .content-left-column{
+    width: 65%
+}
+.content-left-column .visitors-report-wrapper{
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #D2D6DE;
+    border-top: 3px solid #00A65A;
+    box-shadow: 1px 2px #ddd;
+}
+.visitors-report-wrapper .header-panel > p,
+.visitors-report-wrapper .header-panel > div{
+    display: inline-block
+}
+.visitors-report-wrapper .header-panel p{
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+}
+.visitors-report-wrapper .header-panel > div{
+    position: absolute;
+    right: 10px;
+}
+.visitors-report-wrapper .header-panel > div > a{
+    padding: 0 5px;    
+    color: #aaa;
+    font-size: 12px;
+}
+.visitors-report-wrapper .header-panel > div > a:hover{
+    color: #444;
+}
+.visitors-report-wrapper .body-panel {
+    padding: 0;
+}
+.visitors-report-wrapper .body-panel > div{
+    display: inline-block;
+}
+.visitors-report-wrapper .body-panel .vector-world-map{
+    width: 80%;
+    height: 350px;
+}
+.vector-world-map #world-map-markers{
+    height: 350px !important;
+}
+.vector-world-map #world-map-markers .jvectormap-container{
+    /*color: #D2D6DE !important;*/
+    /*background-color: #fff !important;*/
+
+}
+.visitors-report-wrapper .body-panel .vector-specs{
+    width: 20%;
+    height: 350px;
+    background-color: #00A65A;
+    text-align: center;
+    padding: 15px;
+}
+.visitors-report-wrapper .body-panel .vector-specs div{
+    margin: 22px 0;
+}
+.visitors-report-wrapper .body-panel .vector-specs div i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.visitors-report-wrapper .body-panel .vector-specs div > p,
+.visitors-report-wrapper .body-panel .vector-specs div > h4{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: normal;
+}
+.visitors-report-wrapper .body-panel .vector-specs div > p{
+    font-weight: bold;
+}
+.content-left-column .chat-members-wrapper{
+    width: 100%;
+    margin-top: 15px;
+}
+.chat-members-wrapper > div {
+    width: 50%;
+    float: left;
+    min-height: 1px;
+    display: inline-block;
+}
+.chat-members-wrapper > div:first-child {
+    padding-right: 15px;
+}
+.chat-members-wrapper > div:last-child {
+    padding-left: 15px;
+}
+.chat-members-wrapper > div > div {
+    border: 1px solid #D2D6DE;
+    box-shadow: 1px 2px #ddd;
+    border-radius: 3px;
+}
+.chat-members-wrapper .direct-chat {
+    border-top: 3px solid #F39C12;
+}
+.direct-chat .header-panel > p,
+.direct-chat .header-panel > div{
+    display: inline-block
+}
+.direct-chat .header-panel p{
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+}
+.direct-chat .header-panel > div{
+    position: absolute;
+    right: 10px;
+}
+.direct-chat .header-panel > div > span{
+    border-radius: 9px;
+    padding: 3px 8px;
+}
+.direct-chat .header-panel > div > a{
+    padding: 0 5px;    
+    color: #aaa;
+    font-size: 12px;
+}
+.direct-chat .header-panel > div > a:hover{
+    color: #444;
+} 
+.direct-chat .body-panel{
+    width:100%;
+    padding: 10px;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+.direct-chat .body-panel ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.direct-chat .body-panel ul li{
+    padding-bottom: 15px;
+}
+.direct-chat .body-panel ul li .chat-info > .content-right{
+    padding-top: 6px;
+}
+.direct-chat .body-panel ul li .chat-info > p{
+    color: #333;
+    font-size: 11px;
+    font-weight: 600;
+    /*display: inline-block;*/
+    display: inline-table;
+    margin: 0;
+    padding: 0;
+}
+.direct-chat .body-panel ul li .chat-info > small{
+    display: inline-table;
+    padding: 0;
+    margin: 0;
+    color: #aaa;
+    font-size: 11px;
+}
+.direct-chat .body-panel ul li .chat-messages{
+    position: relative;
+    margin-top: 3px;
+}
+.direct-chat .body-panel ul li .chat-messages.remote{
+    padding-left: 50px
+}
+.direct-chat .body-panel ul li .chat-messages.local{
+    padding-right: 50px
+}
+.direct-chat .body-panel ul li .chat-messages.remote img{
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+}
+.direct-chat .body-panel ul li .chat-messages.local img{
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+}
+.direct-chat .body-panel ul li .chat-messages p{
+    position: relative;
+    padding: 5px 10px;
+    /*max-width: 250px;*/
+    margin: 0;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.5
+}
+.direct-chat .body-panel ul li .chat-messages.remote p{
+    color: #000;
+    background-color: #D2D6DE;
+}
+.direct-chat .body-panel ul li .chat-messages.local p{
+    color: #fff;
+    background-color: #F39C12;
+}
+.direct-chat .body-panel ul li .chat-messages.remote p:after {
+    right: 100%;
+    top: 45%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #D2D6DE;
+    border-width: 5px;
+    margin-top: -5px;
+}
+.direct-chat .body-panel ul li .chat-messages.local p:after {
+    left: 100%;
+    top: 35%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-left-color: #F39C12;
+    border-width: 5px;
+    margin-top: -5px;
+}
+.direct-chat .footer-panel form{
+    position: relative;
+}
+.direct-chat .footer-panel form input{
+    border-radius: 0;
+    border: 1px solid #aaa;
+    height: 33px;
+    padding: 4px 65px 4px 8px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.direct-chat .footer-panel form button{
+    position: absolute;
+    border-radius: 0;
+    border: 1px solid #e08e0b;;
+    display: block;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 4.5px 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .direct-chat .footer-panel form button{
+        padding: 6px 12px;
+    }
+}
+.direct-chat .footer-panel form button:hover{
+    background-color: #e08e0b;
+}
+.chat-members-wrapper .latest-members{
+    border-top: 3px solid #DD4B39;
+}
+.latest-members .header-panel > p,
+.latest-members .header-panel > div{
+    display: inline-block
+}
+.latest-members .header-panel p{
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+}
+.latest-members .header-panel > div{
+    position: absolute;
+    right: 10px;
+}
+.latest-members .header-panel > div > span{}
+.latest-members .header-panel > div > a{
+    padding: 0 5px;    
+    color: #aaa;
+    font-size: 12px;
+}
+.latest-members .header-panel > div > a:hover{
+    color: #444;
+} 
+.latest-members .body-panel{
+    padding: 10px;
+}
+.latest-members .body-panel ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.latest-members .body-panel ul li{
+    width: 25%;
+    float: left;
+    padding: 10px;
+    text-align: center;
+}
+.latest-members .body-panel ul li img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+}
+.latest-members .body-panel ul li small,
+.latest-members .body-panel ul li p{
+    display: block;
+}
+.latest-members .body-panel ul li p{
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0;
+    color: #444;
+    /*    overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;*/
+}
+.latest-members .body-panel ul li small{
+    color: #999;
+    font-size: 12px;
+}
+.latest-members .footer-panel{
+    padding: 0;
+}
+.latest-members .footer-panel > a{
+    padding:  10px 0;    
+    color: #5B9AC8;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+.latest-members .footer-panel > a:hover{
+    background-color: rgba(0,0,0,0.08);
+    color: #000;
+}
+.content-left-column .latest-orders-wrapper{
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 3px;
+    border: 1px solid #D2D6DE;
+    border-top: 3px solid #00C0EF;
+    box-shadow: 1px 2px #ddd;
+}
+.latest-orders-wrapper .header-panel > p,
+.latest-orders-wrapper .header-panel > div{
+    display: inline-block
+}
+.latest-orders-wrapper .header-panel p{
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+}
+.latest-orders-wrapper .header-panel > div{
+    position: absolute;
+    right: 10px;
+}
+.latest-orders-wrapper .header-panel > div > a{
+    padding: 0 5px;    
+    color: #aaa;
+    font-size: 12px;
+}
+.latest-orders-wrapper .header-panel > div > a:hover{
+    color: #444;
+}
+.latest-orders-wrapper .body-panel{
+
+}
+.latest-orders-wrapper .body-panel table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.latest-orders-wrapper .body-panel table tr{
+    border-bottom: 1px solid #f4f4f4;
+    text-align: left;
+    font-size: 13px;
+}
+.latest-orders-wrapper .body-panel table tr:last-child{
+    border-bottom: 0;
+}
+.latest-orders-wrapper .body-panel table tr > th{
+    border-bottom: 2px solid #f4f4f4;
+    padding: 10px;
+}
+.latest-orders-wrapper .body-panel table tr > td{
+    padding: 10px;
+}
+.latest-orders-wrapper .body-panel table tr > td a{
+    color: #5B9AC8;
+}
+.latest-orders-wrapper .body-panel table tr > td a:hover{
+    color: #0073B7;
+}
+.latest-orders-wrapper .footer-panel button{
+    padding: 8px 12px;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.02);
+    font-size: 12px;
+}
+.latest-orders-wrapper .footer-panel button.black{
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+.content-row .content-right-column{
+    width: 35%;
+    padding-left: 20px;
+}
+.content-right-column > div {
+    width: 100%;
+}
+.monthly-progress-wrapper > div {
+    height: 90px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.monthly-progress-wrapper > div:last-child {
+    margin-bottom: 0;
+}
+.monthly-progress-wrapper > div > i,
+.monthly-progress-wrapper > div > div{
+    height: 100%;
+}
+.monthly-progress-wrapper > div > i{
+    width: 90px;
+    text-align: center;
+    line-height: 90px;
+    position: absolute;
+}
+.monthly-progress-wrapper > div > div{
+    padding: 7px 0 0 90px;
+}
+.monthly-progress-wrapper > div > div > h5,
+.monthly-progress-wrapper > div > div > p{
+    margin: 0;
+    padding-left: 10px;
+}
+.monthly-progress-wrapper > div > div > h5,
+.monthly-progress-wrapper > div > div > span{
+    padding-bottom: 5px;   
+}
+.monthly-progress-wrapper > div > div > p{
+    font-weight: bold;    
+}
+.monthly-progress-wrapper > div > div > span{
+
+}
+.monthly-progress-wrapper > div > div > span > .bi-label{
+    display: none;
+}
+.monthly-progress-wrapper .inventory > i{
+    background-color: #C27D0E;
+}
+.monthly-progress-wrapper .mentions > i{
+    background-color: #008548;
+}
+.monthly-progress-wrapper .downloads > i{
+    background-color: #B13C2E;
+}
+.monthly-progress-wrapper .direct-messages > i{
+    background-color: #009ABF;
+}
+.browser-usage-wrapper {
+    margin-top: 15px;
+    border-radius: 3px;
+    border: 1px solid #D2D6DE;
+    border-top: 3px solid #d2d6de;
+    box-shadow: 1px 2px #ddd;
+}
+.browser-usage-wrapper .header-panel > p,
+.browser-usage-wrapper .header-panel > div{
+    display: inline-block
+}
+.browser-usage-wrapper .header-panel p{
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+}
+.browser-usage-wrapper .header-panel > div{
+    position: absolute;
+    right: 10px;
+}
+.browser-usage-wrapper .header-panel > div > a{
+    padding: 0 5px;    
+    color: #aaa;
+    font-size: 12px;
+}
+.browser-usage-wrapper .header-panel > div > a:hover{
+    color: #444;
+} 
+.browser-usage-wrapper .body-panel{
+    padding: 10px;
+}
+.browser-usage-wrapper .footer-panel{
+    padding: 0;
+    border-top: 0;
+}
+.browser-usage-wrapper .footer-panel > a{
+    padding:  12px 15px;    
+    color: #333;
+    font-size: 13px;
+    display: block;
+    border-top: 0;
+    border-top: 1px solid #D2D6DE;
+}
+.browser-usage-wrapper .footer-panel > a:hover{
+    background-color: rgba(0,0,0,0.08);
+    color: #000;
+}
+.recent-products-wrapper{
+    margin-top: 15px;
+    border-radius: 3px;
+    border: 1px solid #D2D6DE;
+    border-top: 3px solid #3C8DBC;
+    box-shadow: 1px 2px #ddd;
+}
+.recent-products-wrapper .header-panel > p,
+.recent-products-wrapper .header-panel > div{
+    display: inline-block
+}
+.recent-products-wrapper .header-panel p{
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+}
+.recent-products-wrapper .header-panel > div{
+    position: absolute;
+    right: 10px;
+}
+.recent-products-wrapper .header-panel > div > a{
+    padding: 0 5px;    
+    color: #aaa;
+    font-size: 12px;
+}
+.recent-products-wrapper .header-panel > div > a:hover{
+    color: #444;
+} 
+.recent-products-wrapper .body-panel{
+    padding: 10px;
+}
+.recent-products-wrapper .body-panel ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.recent-products-wrapper .body-panel ul li{
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px 0;
+    position: relative;
+    height: 70px;
+}
+.recent-products-wrapper .body-panel ul li:last-child{
+    border-bottom: none;
+}
+.recent-products-wrapper .body-panel  ul li img{
+    position: absolute;
+}
+.recent-products-wrapper .body-panel ul li .recent-product-content{
+    padding: 2px 0 0 60px;
+    vertical-align: top;
+    width: 100%;
+    overflow: hidden;
+}
+.recent-products-wrapper .body-panel ul li .recent-product-content > div{
+    color: #5B9AC8;
+    font-size: 13px;
+    font-weight: bold;
+}
+.recent-products-wrapper .body-panel ul li .recent-product-content > p{
+    color: #aaa;     
+    margin: 0;
+    font-size: 13px;
+}
+.recent-products-wrapper .footer-panel{
+    padding: 0;
+}
+.recent-products-wrapper .footer-panel > a{
+    padding:  10px 0;    
+    color: #5B9AC8;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+.recent-products-wrapper .footer-panel > a:hover{
+    background-color: rgba(0,0,0,0.08);
+    color: #000;
+}
+/* =============================================================================
+**************************     Footer Styles     *******************************
+============================================================================= */
+footer{
+    height: 50px;
+    padding: 18px 15px;
+}
+footer p{
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+}
+footer p small{
+    font-size: 13px;
+    color: #777;
+    font-weight: normal;
+}
+/* =============================================================================
+******************     Minimizing & Maximizing Styles     **********************
+============================================================================= */
+.minimize > .header-panel > div > a > i.fa.fa-minus:before{
+    content: "\f067";
+}
+/* =============================================================================
+************************     Responsive Styles     *****************************
+============================================================================= */
+@media (min-width: 320px) and (max-width: 767px){
+    .topnav-wrapper {
+        height: 100px;
+    }
+    .topnav-wrapper > div{
+        width: 100% !important;
+        height: 50% !important;
+    }
+    .admin-wrapper a.toggle {
+        padding: 35px 15px 15px 35px !important;
+    }
+    .admin-wrapper a.toggle p{
+        display: none;
+    }
+    .aside-wrapper{
+        top: 100px;
+        width: 211px;
+        z-index: 1;
+        left: -211px
+    }
+    .body-wrapper.sidebar-close .aside-wrapper{
+        position: absolute;
+        width: 211px;
+        left: 0;
+        z-index: 1;
+        min-width: 200px;
+    }
+    .content-wrapper{
+        width: 100%;
+        margin: 0;
+    }
+    .body-wrapper.sidebar-close .content-wrapper{
+        margin-left: 211px;
+    }
+    .content-wrapper .dashboard-wrapper {
+        height: 58px;
+    }
+    .dashboard-wrapper .page-location-wrapper {
+        float: left; 
+        font-size: 11px;
+        padding: 9px;
+        background-color: #D2D6DE;
+        border-radius: 2px;
+        display: block;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .statistics-wrapper > div {
+        width: 100%;
+        margin-bottom: 15px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .monthly-recap-wrapper .body-panel #container {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .monthly-recap-wrapper .body-panel .goal-wrapper{
+        width: 100%;
+        padding: 15px 0 0 0;
+    }
+    .monthly-recap-wrapper .footer-panel div {
+        width: 49%;
+    }
+    .monthly-recap-wrapper .footer-panel div:nth-child(2),
+    .monthly-recap-wrapper .footer-panel div:nth-child(4) {
+        border-right: 0;
+    }
+    .monthly-recap-wrapper .footer-panel div:nth-child(3),
+    .monthly-recap-wrapper .footer-panel div:nth-child(4) {
+        margin-top: 15px;
+    }
+    .visitors-report-wrapper .body-panel .vector-world-map{
+        width: 100%;
+    }
+    .visitors-report-wrapper .body-panel .vector-specs{
+        width: 100%;
+    }
+    .content-row .content-left-column{
+        width: 100%;
+    }
+    .content-row .content-right-column{
+        width: 100%;
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .chat-members-wrapper > div {
+        width: 100%;
+    }
+    .chat-members-wrapper > div:first-child,
+    .chat-members-wrapper > div:last-child {
+        padding: 0; 
+    }
+    .chat-members-wrapper > div:first-child {
+        margin-bottom: 15px;
+    }
+    /*    .latest-members .header-panel > div > span {
+            margin-right: 0px;
+        }*/
+}
+@media (min-width: 320px) and (max-width: 480px){
+
+    .profile-wrapper .message-wrapper  div.inner{
+        left: -60px;
+    }
+    .profile-wrapper .notification-wrapper  div.inner{
+        left: -110px;
+    }
+    .profile-wrapper .task-wrapper  div.inner{
+        right: -98px;
+    }
+    .profile-wrapper .admin-wrapper  ul.inner{
+        right: -45px;
+    }
+    .latest-orders-wrapper .body-panel {
+        overflow-x: scroll;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px){
+    .content-wrapper{
+        width: 100%;
+    }
+    .profile-wrapper .message-wrapper  div.inner{
+        right: -80px;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px){
+    .topnav-wrapper .brand-wrapper {
+        width: 25%;
+    }
+    .topnav-wrapper .nav-bar {
+        width: 75%;
+    }
+    .aside-wrapper{
+        width: 25%;
+    }
+    .body-wrapper.sidebar-close .aside-wrapper {
+        left: -25%;
+    }
+    .aside-wrapper .side-nav-wrapper .side-admin-wrapper .side-admin-status{    
+        padding: 0;
+    }
+    .dashboard-wrapper .page-location-wrapper {
+        float: left; 
+        font-size: 11px;
+        padding: 9px;
+        background-color: #D2D6DE;
+        border-radius: 2px;
+        display: block;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .content-wrapper{
+        width: 75%;
+        margin-left: 25%;
+    }
+    .statistics-wrapper > div {
+        width: 50%;
+    }
+    .statistics-wrapper > div:first-child{
+        padding: auto 20px 0 0; 
+        margin-bottom: 15px; 
+    }
+    .statistics-wrapper > div:nth-child(2){
+        margin-bottom: 15px; 
+        padding-right: 0 !important;
+    }
+    .statistics-wrapper > div:nth-child(3){
+        padding-left: 0;
+    }
+    .monthly-recap-wrapper .body-panel #container {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .monthly-recap-wrapper .body-panel .goal-wrapper{
+        width: 100%;
+        padding: 15px 0 0 0;
+    }
+    .monthly-recap-wrapper .footer-panel div {
+        width: 23.5%;
+    }
+    .content-row .content-left-column{
+        width: 100%;
+    }
+    .content-row .content-right-column{
+        width: 100%;
+        padding-left: 0;
+        margin-top: 15px;
+    }
+    .chat-members-wrapper > div {
+        width: 100%;
+    }
+    .chat-members-wrapper > div:first-child,
+    .chat-members-wrapper > div:last-child {
+        padding: 0; 
+    }
+    .chat-members-wrapper > div:first-child {
+        margin-bottom: 15px;
+    }
+    /*    .latest-members .header-panel > div > span {
+            margin-right: 0px;
+        }*/
+}
